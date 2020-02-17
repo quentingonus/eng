@@ -1,15 +1,3 @@
-<?php
-require_once 'mobile_detect.php';
-function isMobileDevice()
-{
-    $detect = new Mobile_Detect;
-    if ($detect->isMobile() && !$detect->isTablet()) {
-        return true;
-    } else {
-        return false;
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,9 +16,7 @@ function isMobileDevice()
 
 <body class="bg-light">
     <div class="jumbotron text-center bg-light">
-        <div class="container <?php if (!(isMobileDevice())) {
-                                    echo 'p-5';
-                                } ?> text-justify">
+        <div class="container text-justify">
             <blockquote class="blockquote" v-for="book in books">
                 <div class="float-right book-icon display-4" @mouseover="changeReadIconL($event)" @mouseleave="changeReadIconR($event)">
                     <i class="fas fa-book-open"></i>
