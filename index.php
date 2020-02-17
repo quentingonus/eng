@@ -19,7 +19,6 @@
         <div class="container text-justify">
             <blockquote class="blockquote" v-for="book in books">
                 <div class="float-right book-icon display-4" @mouseover="changeReadIconL($event)" @mouseleave="changeReadIconR($event)">
-                    <i class="fas fa-book-open"></i>
                     <i class="fas fa-book-reader"></i>
                 </div>
                 <h1 class="Paragraph-title" v-text="book.name"></h1>
