@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap');
 .Paragraph-title {
     font-family: 'Abel', sans-serif;
+    font-size: 15vmax;
+    cursor: pointer;
+}
+
+.Paragraph-title:hover {
+    color: rgb(32, 190, 130);
 }
 
 .Paragraph-body {

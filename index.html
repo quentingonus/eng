@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.min.css">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/index.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
@@ -18,15 +16,25 @@
     <div class="jumbotron bg-light">
         <div class="container">
             <blockquote class="blockquote" v-for="book in books">
-                <h1 class="Paragraph-title" v-text="book.name"></h1>
-                <p class="has-text-grey-light">Type : {{ book.type }}</p>
-                <p class="Paragraph-body" v-html="paragraphBody"></p>
+                <p class="Paragraph-title is-size-3-mobile is-size-3-desktop is-size-3-tablet" v-text="book.name" @click="readThis(book.name,book.author)"></p>
+                <p class="has-text-info">Type : {{ book.type }}</p>
                 <footer class="blockquote-footer" v-text="book.author"></footer>
                 <hr>
             </blockquote>
+            <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head has-text-centered">
+                        <p class="modal-card-title" v-text="bookTitle"></p>
+                        <button class="delete" aria-label="close" @click="closeModal"></button>
+                    </header>
+                    <section class="modal-card-body" v-html="bookBody">
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
 </body>
-<script src="index.min.js"></script>
+<script src="js/index.min.js"></script>
 
 </html>
